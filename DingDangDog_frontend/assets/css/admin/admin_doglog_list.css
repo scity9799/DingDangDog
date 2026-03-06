@@ -11,3 +11,9 @@
       height: 100vh;
 }
 
+tr {
+  height: 35px;
+}
+table{
+  width: 100%;
+}
