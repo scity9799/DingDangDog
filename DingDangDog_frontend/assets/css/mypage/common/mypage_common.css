@@ -7,18 +7,19 @@
   box-sizing:border-box;
 }
 
-@font-face{
-  font-family: "BMJUA";
-  src: url("./../../BMJUA.ttf") format("truetype");
+@font-face {
+  font-family: "HannaPro";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.0/BMHANNAPro.woff")
+    format("woff");
   font-weight: normal;
-  font-style: normal;
+  font-display: swap;
 }
 
 body{
   width:1440px;
   margin:0 auto;
   background:#fff;
-  font-family:"BMJUA", sans-serif;
+  font-family:"HannaPro", sans-serif;
 }
 
 header{
