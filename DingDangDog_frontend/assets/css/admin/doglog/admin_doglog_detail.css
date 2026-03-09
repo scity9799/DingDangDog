@@ -1,10 +1,8 @@
 .doglog-detail-container {
   width: 100%;
-  height: 620px;
   background-color: white;
   border-radius: 5px;
   box-shadow: 2px 2px 5px #b6b6b6;
-  overflow: scroll;
 }
 
 .detail-title {
@@ -44,11 +42,12 @@
 }
 
 .detail-main-post {
-  width: 700px;
   height: 360px;
   border: 1px solid #b6b6b6;
   border-radius: 5px;
   padding: 20px;
+  flex: 1;
+  margin-left: 20px;
 }
 
 hr {

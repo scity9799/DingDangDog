@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="../../../assets/css/admin/admin.css" />
     <link
       rel="stylesheet"
-      href="/assets/css/admin/doglog/admin_doglog_detail.css"
+      href="../../../assets/css/admin/doglog/admin_doglog_detail.css"
     />
+    <script defer src="/assets/js/admin/admin_doglog_detail.js"></script>
   </head>
 
   <body>
@@ -59,13 +60,50 @@
                 <div class="btn-comment-delete btn">댓글 삭제</div>
               </div>
             </div>
+            <div class="detail-comment-container">
+              <div class="detail-comment-info">
+                <div class="comment-info-name">철수</div>
+                <div class="comment-info-date">2026.03.07</div>
+              </div>
+              <div class="detail-comment-post">
+                <div class="comment-post-content">
+                  강아지 너무 이쁘네요 ㅎㅎㅎ
+                </div>
+                <div class="btn-comment-delete btn">댓글 삭제</div>
+              </div>
+            </div>
+            <div class="detail-comment-container">
+              <div class="detail-comment-info">
+                <div class="comment-info-name">철수</div>
+                <div class="comment-info-date">2026.03.07</div>
+              </div>
+              <div class="detail-comment-post">
+                <div class="comment-post-content">
+                  강아지 너무 이쁘네요 ㅎㅎㅎ
+                </div>
+                <div class="btn-comment-delete btn">댓글 삭제</div>
+              </div>
+            </div>
+            <div class="detail-comment-container">
+              <div class="detail-comment-info">
+                <div class="comment-info-name">철수</div>
+                <div class="comment-info-date">2026.03.07</div>
+              </div>
+              <div class="detail-comment-post">
+                <div class="comment-post-content">
+                  강아지 너무 이쁘네요 ㅎㅎㅎ
+                </div>
+                <div class="btn-comment-delete btn">댓글 삭제</div>
+              </div>
+            </div>
           </div>
         </div>
         <!-- 페이지 하단 (검색, 페이지네이션) -->
         <div class="admin-main-section-footer">
           <div class="btn-container">
-            <button class="btn-backlist btn">목록으로</button>
-            <button class="btn-doglog-delete btn">게시글 삭제</button>
+            <button class="btn-backlist btn" onclick="location.href = 'admin_doglog_list.html'"
+              class="return-btn admin-box-shadow">목록으로</button>
+            <button class="btn-doglog-delete btn" id="btn-remove-detail">게시글 삭제</button>
           </div>
         </div>
       </section>
