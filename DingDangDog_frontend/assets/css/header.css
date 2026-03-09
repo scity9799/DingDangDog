@@ -1,8 +1,7 @@
 /* header */
 * {
-
-  margin: 0px;
-  padding: 0px;
+    margin: 0px;
+    padding: 0px;
     margin: 0px;
     padding: 0px;
 }
@@ -19,7 +18,12 @@
 .btn-left-menu {
     padding-left: 120px;
     color: #F47C2A;
+}
 
+
+.btn-left-menu {
+    padding-left: 120px;
+    color: #F47C2A;
 }
 
 .btn-center-menu {
@@ -44,7 +48,7 @@
 }
 
 /* container */
-.container {
+.h-container {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -52,7 +56,9 @@
 }
 
 /* header 왼쪽 : 로고, 사이트 슬로건*/
-.left-menu {
+
+
+.h-left-menu {
     display: flex;
     align-items: center;
     gap: 20px;
@@ -98,38 +104,51 @@
     /* '멍!' 글자 숨기기 */
     margin-right: 5px;
 }
+
+/* background-size: contain;
+background-repeat: no-repeat;
+text-indent: -9999px;
+margin-right: 5px;
+} */
+
 /* 로그아웃 상태 */
 .login-link {
     text-decoration: none;
     font-size: 23px;
     color: #F47C2A;
 }
+
 /* 로그인 상태 */
 .user-section {
     display: flex;
     align-items: center;
     gap: 10px;
 }
+
 .user-section-img {
     width: 25px;
     height: 25px;
     object-fit: contain;
 }
+
 .user-info {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     line-height: 1.2;
 }
+
 .user-nickname {
     font-size: 23px;
     color: #F47C2A;
 }
+
 .mypage-btn {
     font-size: 23px;
     color: #F47C2A;
     text-decoration: underline;
 }
+
 .logout-btn {
     font-size: 23px;
     color: #F47C2A;

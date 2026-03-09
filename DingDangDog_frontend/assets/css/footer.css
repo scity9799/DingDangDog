@@ -4,6 +4,7 @@
   padding: 0px;
 }
 
+<<<<<<< HEAD
 .footer {
   height: 210px;
   background-color: #FFEFE6;
@@ -25,6 +26,11 @@
 /* footer box */
 .footer {
   height: 210px;
+=======
+/* footer box */
+.footer {
+  height: 310px;
+>>>>>>> ycm
   background-color: #FFEFE6;
   color: black;
   display: flex;
@@ -35,7 +41,11 @@
 }
 
 /* container */
+<<<<<<< HEAD
 .container {
+=======
+.f-container {
+>>>>>>> ycm
   width: 1440%;
   margin: 0px auto;
   display: flex;
@@ -45,7 +55,11 @@
 }
 
 /* footer 왼쪽 : 인포메이션 텍스트 */
+<<<<<<< HEAD
 .left-menu {
+=======
+.f-left-menu {
+>>>>>>> ycm
   font-family: "BM HANNA_TTF";
   display: flex;
   flex-direction: column;
@@ -58,7 +72,11 @@
 .info {
   align-items: center;
   margin-bottom: 20px;
+<<<<<<< HEAD
   line-height: 2.0;       /* 라인 높이 간격 */
+=======
+  line-height: 2.0;       
+>>>>>>> ycm
 }
 
 .title {
