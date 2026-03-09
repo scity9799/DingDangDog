@@ -290,6 +290,7 @@ if (withdrawSubmitBtn) {
       //나중에 회원탈퇴 로직 처리후 아래 이어서 진행 
       window.location.href = "./../etc/goodby.html";
     } else {
+      alert("입력 오류입니다!")
       closeWithdrawModal();
     }
   });
