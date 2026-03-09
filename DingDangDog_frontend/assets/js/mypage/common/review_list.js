@@ -24,8 +24,7 @@ const reviewData = [
   { id: 1, title: "첫 후기 작성", date: "2026-02-14" }
 ];
 
-const rowsPerPage = 10;
-let currentPage = 1;
+
 
 const reviewTableBody = document.getElementById("reviewTableBody");
 const pagination = document.getElementById("pagination");
@@ -51,12 +50,32 @@ function renderTable(page) {
   });
 }
 
+
+//페이지네이션 동작 코드
+//reviewData 부분만 맞춰서 수정하면 됨
+const rowsPerPage = 10; //페이지당 보여줄 정보 개수
+let currentPage = 1;
+const maxVisiblePages = 5; //페이지네이션 버튼 개수
+
 function renderPagination() {
   const totalPages = Math.ceil(reviewData.length / rowsPerPage);
-
   pagination.innerHTML = "";
 
-  // 이전 버튼
+  const maxVisiblePages = 5;
+
+  let startPage = currentPage - Math.floor(maxVisiblePages / 2);
+  let endPage = currentPage + Math.floor(maxVisiblePages / 2);
+
+  if (startPage < 1) {
+    startPage = 1;
+    endPage = Math.min(maxVisiblePages, totalPages);
+  }
+
+  if (endPage > totalPages) {
+    endPage = totalPages;
+    startPage = Math.max(1, totalPages - maxVisiblePages + 1);
+  }
+
   const prevLi = document.createElement("li");
   const prevBtn = document.createElement("button");
   prevBtn.classList.add("prev-btn");
@@ -73,8 +92,7 @@ function renderPagination() {
   prevLi.appendChild(prevBtn);
   pagination.appendChild(prevLi);
 
-  // 페이지 번호 버튼
-  for (let i = 1; i <= totalPages; i++) {
+  for (let i = startPage; i <= endPage; i++) {
     const li = document.createElement("li");
     const btn = document.createElement("button");
 
@@ -94,7 +112,6 @@ function renderPagination() {
     pagination.appendChild(li);
   }
 
-  // 다음 버튼
   const nextLi = document.createElement("li");
   const nextBtn = document.createElement("button");
   nextBtn.classList.add("next-btn");

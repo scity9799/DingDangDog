@@ -22,8 +22,7 @@ const volunteerData = [
   { id: 1, date: "2026-02-28", title: "보호견 돌봄 활동", shelter: "희망 보호소" }
 ];
 
-const rowsPerPage = 10;
-let currentPage = 1;
+
 
 const volunteerTableBody = document.getElementById("volunteerTableBody");
 const pagination = document.getElementById("pagination");
@@ -83,9 +82,30 @@ function bindCancelButtons() {
   });
 }
 
+//페이지네이션 동작 코드
+//reviewData 부분만 맞춰서 수정하면 됨
+const rowsPerPage = 10; //페이지당 보여줄 정보 개수
+let currentPage = 1;
+const maxVisiblePages = 5; //페이지네이션 버튼 개수
+
 function renderPagination() {
   const totalPages = Math.ceil(volunteerData.length / rowsPerPage);
   pagination.innerHTML = "";
+
+  const maxVisiblePages = 5;
+
+  let startPage = currentPage - Math.floor(maxVisiblePages / 2);
+  let endPage = currentPage + Math.floor(maxVisiblePages / 2);
+
+  if (startPage < 1) {
+    startPage = 1;
+    endPage = Math.min(maxVisiblePages, totalPages);
+  }
+
+  if (endPage > totalPages) {
+    endPage = totalPages;
+    startPage = Math.max(1, totalPages - maxVisiblePages + 1);
+  }
 
   const prevLi = document.createElement("li");
   const prevBtn = document.createElement("button");
@@ -103,7 +123,7 @@ function renderPagination() {
   prevLi.appendChild(prevBtn);
   pagination.appendChild(prevLi);
 
-  for (let i = 1; i <= totalPages; i++) {
+  for (let i = startPage; i <= endPage; i++) {
     const li = document.createElement("li");
     const btn = document.createElement("button");
 
@@ -127,7 +147,7 @@ function renderPagination() {
   const nextBtn = document.createElement("button");
   nextBtn.classList.add("next-btn");
   nextBtn.innerHTML = "<span>&gt;</span>";
-  nextBtn.disabled = currentPage === totalPages || totalPages === 0;
+  nextBtn.disabled = currentPage === totalPages;
 
   nextBtn.addEventListener("click", () => {
     if (currentPage < totalPages) {
