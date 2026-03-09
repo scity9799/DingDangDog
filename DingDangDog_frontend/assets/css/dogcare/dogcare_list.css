@@ -52,8 +52,10 @@ footer {
 .main-header-title {
   font-size: 32px;
   color: #f47c2a;
-  text-decoration: underline;
+  border-bottom: 2px solid #f47c2a;
+  padding: 20px 20px 15px 20px;
   margin: 37px 27px 37px 0;
+  text-align: center;
 }
 .main-content {
   border: 1px solid #f47c2a;

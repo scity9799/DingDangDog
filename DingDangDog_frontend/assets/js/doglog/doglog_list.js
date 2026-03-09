@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  const rows = Array.from(document.querySelectorAll(".admin-doglog-list-row"));
-  const rowsPerPage = 15;   // 게시글 수
-  const pageCount = 5;      // 페이지 버튼 수
+  const cards = Array.from(document.querySelectorAll(".doglog-card"));
+  const cardsPerPage = 20;   // 한 페이지 카드 수
+  const pageCount = 5;       // 페이지 버튼 개수
 
   let currentPage = 1;
-  let filteredRows = [...rows];
+  let filteredCards = [...cards];
 
   const pageList = document.querySelector(".page-list");
   const prevBtn = document.querySelector(".prev-btn");
@@ -14,40 +14,35 @@ document.addEventListener("DOMContentLoaded", function () {
   const searchInput = document.querySelector(".search-input");
   const searchSelect = document.querySelector(".search-select");
 
-
-
-  function renderPage(page) {
-
-    rows.forEach(row => row.style.display = "none");
-    const start = (page - 1) * rowsPerPage;
-    const end = start + rowsPerPage;
-
-    filteredRows.slice(start, end).forEach(row => {
-      row.style.display = "grid";
+  function renderPage(page){
+    cards.forEach(card => card.style.display = "none");
+    const start = (page - 1) * cardsPerPage;
+    const end = start + cardsPerPage;
+    filteredCards.slice(start, end).forEach(card => {
+      card.style.display = "block";
     });
   }
 
-  function createPagination() {
+  function createPagination(){
 
-    const totalPages = Math.ceil(filteredRows.length / rowsPerPage);
+    const totalPages = Math.ceil(filteredCards.length / cardsPerPage);
     const pageGroup = Math.ceil(currentPage / pageCount);
     const startPage = (pageGroup - 1) * pageCount + 1;
     const endPage = Math.min(startPage + pageCount - 1, totalPages);
     const oldBtns = document.querySelectorAll(".page-item");
     oldBtns.forEach(btn => btn.parentElement.remove());
 
-
-
-    for (let i = startPage; i <= endPage; i++) {
+    for(let i = startPage; i <= endPage; i++){
 
       const li = document.createElement("li");
       const btn = document.createElement("button");
       btn.className = "page-item";
       btn.textContent = i;
 
-      if (i === currentPage) {
+      if(i === currentPage){
         btn.classList.add("current-page");
       }
+
       btn.addEventListener("click", () => {
         currentPage = i;
         renderPage(currentPage);
@@ -60,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   prevBtn.addEventListener("click", () => {
 
-    if (currentPage > 1) {
+    if(currentPage > 1){
       currentPage--;
       renderPage(currentPage);
       createPagination();
@@ -68,37 +63,31 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   nextBtn.addEventListener("click", () => {
-
-    const totalPages = Math.ceil(filteredRows.length / rowsPerPage);
-
-    if (currentPage < totalPages) {
+    const totalPages = Math.ceil(filteredCards.length / cardsPerPage);
+    if(currentPage < totalPages){
       currentPage++;
       renderPage(currentPage);
       createPagination();
     }
   });
 
-  searchBtn.addEventListener("click", () => {
-
+  searchBtn.addEventListener("click", () =>{
     const keyword = searchInput.value.trim();
     const type = searchSelect.value;
     filteredRows = rows.filter(row => {
 
-      const id = row.querySelector(".doglog-id").textContent;
-      const nickname = row.querySelector(".doglog-nickname").textContent;
+      const writer = row.querySelector(".doglog-writer").textContent;
+      const title = row.querySelector(".doglog-post-title").textContent;
       
-      if (type === "아이디") return id.includes(keyword);
-      if (type === "닉네임") return nickname.includes(keyword);
+      if (type === "작성자명") return writer.includes(keyword);
+      if (type === "제목") return title.includes(keyword);
       return true;
     });
 
     currentPage = 1;
     renderPage(currentPage);
     createPagination();
-
   });
-
   renderPage(currentPage);
   createPagination();
-
 });

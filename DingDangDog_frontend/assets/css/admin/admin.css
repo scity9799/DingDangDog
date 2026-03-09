@@ -3,8 +3,7 @@
 */
 @font-face {
   font-family: "HannaPro";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.0/BMHANNAPro.woff")
-    format("woff");
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.0/BMHANNAPro.woff") format("woff");
   font-weight: normal;
   font-display: swap;
 }
@@ -23,6 +22,7 @@ body {
 a {
   text-decoration: none;
 }
+
 ul {
   list-style: none;
 }
@@ -114,6 +114,7 @@ ul {
 .admin-nav-list:hover {
   background-color: #f47c2a;
 }
+
 .admin-nav-list:hover a {
   color: white;
 }
@@ -131,6 +132,7 @@ ul {
   align-items: center;
   margin-top: auto;
 }
+
 .site-logo {
   width: 100px;
   height: 100px;
@@ -141,6 +143,7 @@ ul {
   align-items: center;
   margin-bottom: 40px;
 }
+
 /* 
 =============== 사이드바 ===============
 */
@@ -169,6 +172,7 @@ ul {
 .admin-main-section-header {
   height: 170px;
 }
+
 .admin-title {
   font-size: 24px;
   padding: 35px 0;
@@ -186,6 +190,7 @@ ul {
   display: flex;
   justify-content: flex-end;
 }
+
 .search-box select {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
@@ -197,6 +202,8 @@ ul {
 .search-box button {
   border: none;
   outline: none;
+  box-shadow: 2px 2px 5px #b6b6b6;
+
 }
 
 .btn-search {
@@ -208,6 +215,7 @@ ul {
   border-bottom-right-radius: 5px;
   cursor: pointer;
 }
+
 /* 
 ---- 검색창 ----
 */
@@ -222,6 +230,7 @@ ul {
   justify-content: center;
   gap: 4px;
 }
+
 .page-list button {
   width: 30px;
   height: 30px;
@@ -229,6 +238,7 @@ ul {
 
   box-shadow: 2px 2px 5px #b6b6b6;
 }
+
 .page-list button {
   cursor: pointer;
 }
@@ -243,11 +253,13 @@ ul {
 .next-btn span {
   color: #f47c2a;
 }
+
 .page-item {
   background-color: white;
   border-style: none;
   border-radius: 5px;
 }
+
 .current-page {
   background-color: #f47c2a !important;
   color: white;
@@ -257,10 +269,12 @@ ul {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
+
 .next-btn {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
+
 /* 
   ---- 페이지네이션 ----
   */
