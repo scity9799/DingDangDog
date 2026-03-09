@@ -16,10 +16,6 @@ const archiveData = [
   { id: 15, name: "호두", info: "믹스견 | 5살 | 수컷" },
   { id: 16, name: "루비", info: "치와와 | 2살 | 암컷" }
 ];
-
-const itemsPerPage = 8;
-let currentPage = 1;
-
 const archiveList = document.getElementById("archiveList");
 const pagination = document.getElementById("pagination");
 
@@ -48,9 +44,30 @@ function renderCards(page) {
   });
 }
 
+//페이지네이션 동작 코드
+//reviewData 부분만 맞춰서 수정하면 됨
+const itemsPerPage = 8; //페이지당 보여줄 정보 개수
+let currentPage = 1;
+const maxVisiblePages = 5; //페이지네이션 버튼 개수
+
 function renderPagination() {
   const totalPages = Math.ceil(archiveData.length / itemsPerPage);
   pagination.innerHTML = "";
+
+  const maxVisiblePages = 5;
+
+  let startPage = currentPage - Math.floor(maxVisiblePages / 2);
+  let endPage = currentPage + Math.floor(maxVisiblePages / 2);
+
+  if (startPage < 1) {
+    startPage = 1;
+    endPage = Math.min(maxVisiblePages, totalPages);
+  }
+
+  if (endPage > totalPages) {
+    endPage = totalPages;
+    startPage = Math.max(1, totalPages - maxVisiblePages + 1);
+  }
 
   const prevLi = document.createElement("li");
   const prevBtn = document.createElement("button");
@@ -68,7 +85,7 @@ function renderPagination() {
   prevLi.appendChild(prevBtn);
   pagination.appendChild(prevLi);
 
-  for (let i = 1; i <= totalPages; i++) {
+  for (let i = startPage; i <= endPage; i++) {
     const li = document.createElement("li");
     const btn = document.createElement("button");
 
@@ -106,7 +123,7 @@ function renderPagination() {
 }
 
 function updatePage() {
-  renderCards(currentPage);
+  renderTable(currentPage);
   renderPagination();
 }
 
