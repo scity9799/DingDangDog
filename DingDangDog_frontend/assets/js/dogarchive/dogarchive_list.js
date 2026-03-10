@@ -77,10 +77,10 @@ document.addEventListener("DOMContentLoaded", function () {
     filteredCards = cards.filter(card => {
 
       const writer = card.querySelector(".dogarchive-writer").textContent;
-      const dogtype = card.querySelector(".dogarchive-dogtype").textContent;
+      const title = card.querySelector(".dogarchive-type").textContent;
       
       if (type === "보호소명") return writer.includes(keyword);
-      if (type === "견종") return dogtype.includes(keyword);
+      if (type === "견종") return title.includes(keyword);
       return true;
     });
 

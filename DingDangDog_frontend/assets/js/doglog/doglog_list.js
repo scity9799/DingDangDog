@@ -74,10 +74,10 @@ document.addEventListener("DOMContentLoaded", function () {
   searchBtn.addEventListener("click", () =>{
     const keyword = searchInput.value.trim();
     const type = searchSelect.value;
-    filteredRows = rows.filter(row => {
+    filteredCards = cards.filter(card => {
 
-      const writer = row.querySelector(".doglog-writer").textContent;
-      const title = row.querySelector(".doglog-post-title").textContent;
+      const writer = card.querySelector(".doglog-writer").textContent;
+      const title = card.querySelector(".doglog-post-title").textContent;
       
       if (type === "작성자명") return writer.includes(keyword);
       if (type === "제목") return title.includes(keyword);
