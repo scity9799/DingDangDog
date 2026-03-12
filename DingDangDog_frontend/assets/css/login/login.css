@@ -1,5 +1,5 @@
 @font-face {
-    font-family: 'BMHANNAAir'; /* 이 이름을 기억하세요! */
+    font-family: 'BMHANNAAir'; 
     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.0/BMHANNAAir.woff') format('woff');
     font-weight: normal;
     font-style: normal;
@@ -207,3 +207,6 @@ section {
 }
 
 
+.login-main-input-password {
+  display: flex;
+}
